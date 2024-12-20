@@ -2,7 +2,7 @@ import useDebounce from '../../hooks/useDebounce';
 import './Search.css';
 
 function Search({updateSearchTerm}) {
-    const debouncedCallback = useDebounce((e) => updateSearchTerm(e.target.value))
+    const debouncedCallback = useDebounce((e) => updateSearchTerm(e.target.value.toLowerCase()), 2000);
     return (
         <div className="search-wrapper">
             <input 
